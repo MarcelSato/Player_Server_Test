@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,6 +13,9 @@ public class JavaTest {
     public static void main(String[] args) {
 
 
+// marcel
+        int result = 0;
+        String answer = "";
 //        String q = "979b8190: what is 1 plus 3";
 //        String q = "5fbb9030: which of the following numbers is the largest: 61, 212, 412, 1004";
 //        String q = "bd1f1ec0: which of the following numbers is both a square and a cube: 562, 729, 747, 2401, 64, 1000000";
@@ -23,9 +28,102 @@ public class JavaTest {
 //        String q = "9e754d70: who is the Prime Minister of Great Britain";
 //        String q = "dbb9b320: what colour is a banana";
 
-        int result = 0;
-        String answer = "";
-        System.out.println(q);
+
+
+//      String pattern = "[\\w]+: what is ([\\d]+) plus ([\\d]+)";
+//        Pattern p = Pattern.compile(pattern);
+//        Matcher m = p.matcher(q);
+//        if(m.find()){
+//            result = Integer.parseInt(m.group(1)) + Integer.parseInt(m.group(2));
+//            answer = "" + result;
+//        }
+
+//        String pattern15 = "[^,]+: which of the following numbers is the largest: ([\\d\\s,]+)";
+        String pattern10 = "[^,]+: which of the following numbers are primes: ([\\d\\s,]+)";
+        Pattern p10 = Pattern.compile(pattern10);
+        Matcher m10 = p10.matcher(q);
+        if(m10.find()){
+            String[] strNums = m10.group(1).split(",");
+            List<String> primeList = new ArrayList<String>();
+            boolean prime = false;
+            for(String s : strNums){
+
+                double maxD = Math.sqrt(Integer.parseInt(s.trim()));
+                int max = (int) Math.ceil(maxD);
+                int control = 2;
+                while(control <= max){
+                    int sInt = Integer.parseInt(s.trim());
+                    if(sInt % control != 0){
+                        prime = true;
+                    } else {
+                        prime = false;
+                        break;
+                    }
+                    control++;
+                }
+                if(prime == true){
+//                    if(Integer.parseInt(s.trim()) == 1){
+//                        break;
+//                    }
+                    primeList.add(s.trim());
+                }
+            }
+            for(int i = 0; i < primeList.size(); i++){
+                if (i == primeList.size()-1){
+                    answer += primeList.get(i);
+                } else {
+                    answer += primeList.get(i) + ", ";
+                }
+            }
+        }
+
+
+        String pattern9 = "[\\w]+: who is the Prime Minister of ([\\w\\s]+)";
+        Pattern p9 = Pattern.compile(pattern9);
+        Matcher m9 = p9.matcher(q);
+        if(m9.find()){
+            if(m9.group(1).equals("Great Britain")){
+                answer = "David Cameron";
+            }
+        }
+
+
+        String pattern8 = "[\\w]+: which city is the ([\\w]+) tower in";
+        Pattern p8 = Pattern.compile(pattern8);
+        Matcher m8 = p8.matcher(q);
+        if(m8.find()){
+            if(m8.group(1).equals("Eiffel")){
+                answer = "Paris";
+            }
+        }
+
+
+        String pattern7 = "[\\w]+: who played James Bond in the film ([\\w\\s]+)";
+        Pattern p7 = Pattern.compile(pattern7);
+        Matcher m7 = p7.matcher(q);
+        if(m7.find()){
+            if(m7.group(1).equals("Dr No")){
+                answer = "Sean Connery";
+            }
+        }
+
+        String pattern6 = "[\\w]+: what colour is a ([\\w]+)";
+        Pattern p6 = Pattern.compile(pattern6);
+        Matcher m6 = p6.matcher(q);
+        if(m6.find()){
+            if(m6.group(1).equals("banana")) {
+                answer = "yellow";
+            }
+        }
+
+        String pattern5 = "[\\w]+: what currency did ([\\w]+) use before the Euro";
+        Pattern p5 = Pattern.compile(pattern5);
+        Matcher m5 = p5.matcher(q);
+        if(m5.find()){
+            if(m5.group(1).equals("Spain")){
+                answer = "Peseta";
+            }
+        }
 
         String pattern1 = "[^,]+: which of the following numbers is the largest: ([\\d\\s,]+)";
         Pattern p1 = Pattern.compile(pattern1);
@@ -62,9 +160,10 @@ public class JavaTest {
                 double cube = Math.cbrt(e);
                 if(sqr == (int)sqr && cube == (int)cube){
                     result = e;
-                    answer += result + " ";
+                    answer += result + ", ";
                 }
             }
+
         }
 
         String pattern4 = "[\\w]+: what is ([\\d]+) multiplied by ([\\d]+)";
@@ -75,90 +174,7 @@ public class JavaTest {
             answer = "" + result;
         }
 
-        String pattern5 = "[\\w]+: what currency did ([\\w]+) use before the Euro";
-        Pattern p5 = Pattern.compile(pattern5);
-        Matcher m5 = p5.matcher(q);
-        if(m5.find()){
-            if(m5.group(1).equals("Spain")){
-                answer = "Peseta";
-            }
-        }
-
-        String pattern6 = "[\\w]+: what colour is a ([\\w]+)";
-        Pattern p6 = Pattern.compile(pattern6);
-        Matcher m6 = p6.matcher(q);
-        if(m6.find()){
-            if(m6.group(1).equals("banana")) {
-                answer = "yellow";
-            }
-        }
-
-        String pattern7 = "[\\w]+: who played James Bond in the film ([\\w\\s]+)";
-        Pattern p7 = Pattern.compile(pattern7);
-        Matcher m7 = p7.matcher(q);
-        if(m7.find()){
-            if(m7.group(1).equals("Dr No")){
-                answer = "Sean Connery";
-            }
-        }
-
-        String pattern8 = "[\\w]+: which city is the ([\\w]+) tower in";
-        Pattern p8 = Pattern.compile(pattern8);
-        Matcher m8 = p8.matcher(q);
-        if(m8.find()){
-            if(m8.group(1).equals("Eiffel")){
-                answer = "Paris";
-            }
-        }
-
-        String pattern9 = "[\\w]+: who is the Prime Minister of ([\\w\\s]+)";
-        Pattern p9 = Pattern.compile(pattern9);
-        Matcher m9 = p9.matcher(q);
-        if(m9.find()){
-            if(m9.group(1).equals("Great Britain")){
-                answer = "David Cameron";
-            }
-        }
-
-        String pattern10 = "[^,]+: which of the following numbers are primes: ([\\d\\s,]+)";
-        Pattern p10 = Pattern.compile(pattern10);
-        Matcher m10 = p10.matcher(q);
-        if(m10.find()){
-            String[] strNums = m10.group(1).split(",");
-            boolean prime = false;
-            for(String s : strNums){
-
-                double maxD = Math.sqrt(Integer.parseInt(s.trim()));
-                int max = (int) Math.ceil(maxD);
-                int control = 2;
-                while(control <= max){
-                    if(Integer.parseInt(s.trim()) % control != 0){
-                        prime = true;
-                    } else {
-                        prime = false;
-                        break;
-                    }
-                    control++;
-                }
-                if(prime == true){
-                    if(control > 1) {
-                        answer += s.trim() + ", ";
-                    } else {
-                        answer = s.trim();
-                    }
-                }
-            }
-        }
-
-        String pattern11 = "[\\w]+: what is ([\\d]+) minus ([\\d]+)";
-        Pattern p11 = Pattern.compile(pattern11);
-        Matcher m11 = p11.matcher(q);
-        if(m11.find()){
-            result = Integer.parseInt(m11.group(1)) - Integer.parseInt(m11.group(2));
-            answer = "" + result;
-        }
-
         System.out.println(answer);
-        return ok(answer);
+//Marcel
     }
 }
