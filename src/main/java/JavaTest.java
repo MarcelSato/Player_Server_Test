@@ -23,7 +23,7 @@ public class JavaTest {
 //        String q = "9e754d70: what currency did Spain use before the Euro";
 //        String q = "9e754d70: who played James Bond in the film Dr No";
 //        Sean Connery
-        String q = "9e754d70: which of the following numbers are primes: 525, 337, 41, 3, 5, 7, 9, 11, 23, 29, 1, 31, 36, 151"; // Check for number 1!!!!
+        String q = "9e754d70: which of the following numbers are primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101ß"; // Check for number 1!!!!
 //        String q = "9e754d70: which city is the Eiffel tower in";
 //        String q = "9e754d70: who is the Prime Minister of Great Britain";
 //        String q = "dbb9b320: what colour is a banana";
@@ -62,10 +62,9 @@ public class JavaTest {
                     control++;
                 }
                 if(prime == true){
-//                    if(Integer.parseInt(s.trim()) == 1){
-//                        break;
-//                    }
-                    primeList.add(s.trim());
+                    if(Integer.parseInt(s.trim()) != 1){
+                        primeList.add(s.trim());
+                    }
                 }
             }
             for(int i = 0; i < primeList.size(); i++){
