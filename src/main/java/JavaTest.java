@@ -28,8 +28,6 @@ public class JavaTest {
 //        String q = "9e754d70: who is the Prime Minister of Great Britain";
 //        String q = "dbb9b320: what colour is a banana";
 
-
-
 //      String pattern = "[\\w]+: what is ([\\d]+) plus ([\\d]+)";
 //        Pattern p = Pattern.compile(pattern);
 //        Matcher m = p.matcher(q);
@@ -38,7 +36,7 @@ public class JavaTest {
 //            answer = "" + result;
 //        }
 
-//        String pattern15 = "[^,]+: which of the following numbers is the largest: ([\\d\\s,]+)";
+        
         String pattern10 = "[^,]+: which of the following numbers are primes: ([\\d\\s,]+)";
         Pattern p10 = Pattern.compile(pattern10);
         Matcher m10 = p10.matcher(q);
