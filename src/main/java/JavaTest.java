@@ -16,14 +16,14 @@ public class JavaTest {
 // marcel
         int result = 0;
         String answer = "";
+
 //        String q = "979b8190: what is 1 plus 3";
 //        String q = "5fbb9030: which of the following numbers is the largest: 61, 212, 412, 1004";
 //        String q = "bd1f1ec0: which of the following numbers is both a square and a cube: 562, 729, 747, 2401, 64, 1000000";
 //        String q = "1e9bf2a0: what is 13 multiplied by 16";
 //        String q = "9e754d70: what currency did Spain use before the Euro";
 //        String q = "9e754d70: who played James Bond in the film Dr No";
-//        Sean Connery
-        String q = "9e754d70: which of the following numbers are primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101ß"; // Check for number 1!!!!
+//        String q = "9e754d70: which of the following numbers are primes: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101ß"; // Check for number 1!!!!
 //        String q = "9e754d70: which city is the Eiffel tower in";
 //        String q = "9e754d70: who is the Prime Minister of Great Britain";
 //        String q = "dbb9b320: what colour is a banana";
