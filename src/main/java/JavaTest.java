@@ -36,7 +36,7 @@ public class JavaTest {
 //            answer = "" + result;
 //        }
 
-        
+
         String pattern10 = "[^,]+: which of the following numbers are primes: ([\\d\\s,]+)";
         Pattern p10 = Pattern.compile(pattern10);
         Matcher m10 = p10.matcher(q);
