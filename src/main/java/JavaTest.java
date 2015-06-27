@@ -16,10 +16,11 @@ public class JavaTest {
 // marcel
         int result = 0;
         String answer = "";
-//This questions are generated on a server and transmitted over http
-// the answer ha to be sent over http as well.
-
         
+//        This questions are generated on a server and transmitted over http
+//        the answer ha to be sent over http as well.
+
+
 //        String q = "979b8190: what is 1 plus 3";
 //        String q = "5fbb9030: which of the following numbers is the largest: 61, 212, 412, 1004";
 //        String q = "bd1f1ec0: which of the following numbers is both a square and a cube: 562, 729, 747, 2401, 64, 1000000";
@@ -38,7 +39,6 @@ public class JavaTest {
 //            result = Integer.parseInt(m.group(1)) + Integer.parseInt(m.group(2));
 //            answer = "" + result;
 //        }
-
 
         String pattern10 = "[^,]+: which of the following numbers are primes: ([\\d\\s,]+)";
         Pattern p10 = Pattern.compile(pattern10);
@@ -77,7 +77,6 @@ public class JavaTest {
             }
         }
 
-
         String pattern9 = "[\\w]+: who is the Prime Minister of ([\\w\\s]+)";
         Pattern p9 = Pattern.compile(pattern9);
         Matcher m9 = p9.matcher(q);
@@ -87,7 +86,6 @@ public class JavaTest {
             }
         }
 
-
         String pattern8 = "[\\w]+: which city is the ([\\w]+) tower in";
         Pattern p8 = Pattern.compile(pattern8);
         Matcher m8 = p8.matcher(q);
@@ -96,7 +94,6 @@ public class JavaTest {
                 answer = "Paris";
             }
         }
-
 
         String pattern7 = "[\\w]+: who played James Bond in the film ([\\w\\s]+)";
         Pattern p7 = Pattern.compile(pattern7);
