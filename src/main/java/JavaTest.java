@@ -11,12 +11,10 @@ import java.util.regex.Pattern;
 public class JavaTest {
 
     public static void main(String[] args) {
-
-
-// marcel
+        
         int result = 0;
         String answer = "";
-        
+
 //        This questions are generated on a server and transmitted over http
 //        the answer ha to be sent over http as well.
 
