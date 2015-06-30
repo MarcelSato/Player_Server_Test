@@ -8,10 +8,11 @@ import java.util.regex.Pattern;
 /**
  * Created by Marcel on 14/06/15.
  */
+
 public class JavaTest {
 
     public static void main(String[] args) {
-        
+
         int result = 0;
         String answer = "";
 
@@ -170,6 +171,5 @@ public class JavaTest {
         }
 
         System.out.println(answer);
-//Marcel
     }
 }
