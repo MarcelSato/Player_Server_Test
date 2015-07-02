@@ -170,8 +170,9 @@ public class JavaTest {
             answer = "" + result;
         }
 
-        //each of these methods will only run if the q string is matched, splitting the key words and carrying out the logic.
+        // each of these methods will only run if the q string is matched, splitting the key words and carrying out the logic.
         // which will than be returned on the answer string.
+        // some of the questions might have variations
         
         System.out.println(answer);
     }
